@@ -38,7 +38,7 @@ public class AI implements Runnable {
     }
 
     public static void modules() {
-
+        AILang.Modules();
     }
 
     @Override
