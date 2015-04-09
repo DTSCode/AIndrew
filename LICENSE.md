@@ -1,7 +1,7 @@
 THE TOAD LICENSE
 
-A creator is marked as someone who has contributed on GitHub to this project.
 This is the project of code residing at github.com/toad1359/AI WITH THE EXCLUSION OF the Modules folder.
+A creator is marked as someone who has contributed on GitHub to this project.
 
 This AI code is not to be modified or have items taken and repurposed without explicit written, and signed, permission 
 from two creators. This code may be compiled and used. Do NOT redistribute this without written permission from a 
