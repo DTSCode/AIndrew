@@ -4,8 +4,8 @@ THE TOAD LICENSE
 A creator is marked as someone who is a collaborator on GitHub to this.
 
 This AI code is not to be modified or have items taken and repurposed without explicit written, and signed, permission 
-from two creators. This code may be compiled and used. Do NOT redistribute this without written permission from a 
-creator. You only have the right to compile and use this without written permission to do otherwise, as defined above. 
+from two creators. This code may be compiled and run. Do NOT redistribute this without written permission from a 
+creator. You only have the right to compile and run this without written permission to do otherwise, as defined above. 
 Any action not explicitly talked about here requires written permission from three creators. toad1359 is the owner of 
 this project and only he can add contributors to the GitHub page, yet others may with his explicit permission. toad1359 
 is the sole person who may modify this License.
