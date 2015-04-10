@@ -19,6 +19,11 @@ public class AILang throws Exception {
             files[count] = junk;
             count++;
          }
+	//list of modules now in files[]
+	//open files
+	//parse files
+	//keep checking for files
+	//parsing should have support for variables, sockets, files, and functions
     }
     
 }
