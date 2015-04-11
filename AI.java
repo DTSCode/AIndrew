@@ -71,7 +71,7 @@ public class AI implements Runnable {
                 }
                 }
             }
-        Sytem.out.println(output);
+        System.out.println(output);
         }
 
     public static void input() {
