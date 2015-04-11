@@ -95,23 +95,24 @@ public class AI implements Runnable {
     @Override
     public void run() {
         if (threadcount == 1) {
-            input();
             threadcount++;
+            input();
         }
 
         if (threadcount == 2) {
-	    while (true) {
-            	respond();
-	    }
+        	threadcount++;
+	    	while (true) {
+            		respond();
+	    	}
         }
         if (threadcount == 0) {
+            threadcount++;
 		try {
            	 	modules();
 		} catch (Exception e) {
 
 		}
 	    System.out.println("Modules Loaded");
-            threadcount++;
         }
     }
 
