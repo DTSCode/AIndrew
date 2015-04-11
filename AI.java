@@ -49,6 +49,7 @@ public class AI implements Runnable {
     public static void parse(String line) {
         //usandfriends
         //scan sentence for words and replace with simpler words
+        System.out.println("Parsing");
         if (line.contains("Hello")) { 
             line.replace("Hello", "Hi");
         }
@@ -58,6 +59,10 @@ public class AI implements Runnable {
                 if (funcs4Words.get(i)=="greeting") {
                     greeting();
                 }  
+                if (funcs4Words.get(i)=="other") {
+                	//other();
+                }
+                }
             }
         }
     }
