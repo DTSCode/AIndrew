@@ -82,7 +82,6 @@ public class AI implements Runnable {
     public static void respond() {
         //usandfriends:
         while (numToRespond == -1) {
-        	System.out.println("Waiting");
         	try {
         		Thread.sleep(500);
         	}
