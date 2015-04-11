@@ -16,6 +16,52 @@ public class AI implements Runnable {
     public static File face;
     public static String toRespond[] = new String[6];
     public static int numToRespond = -1;
+    public static List<String> knownWords = new ArrayList<String>();
+    public static List<String> funcs4Words = new ArrayList<String>();
+
+    public static void greeting() {
+        Random r = new Random();
+        int responseToUse = r.nextInt(5 - 1) + 1;
+        switch (responseToUse) {
+            case 1:
+                output = "Hi" + output;
+                break;
+            case 2:
+                output = "Hello" + output;
+                break;
+            case 3:
+                output = "Salutations" + output;
+                break;
+            case 4:
+                output = "Greetings" + output;
+                break;
+            case 5:
+                output = "Hola" + output;
+                break;
+        }
+    }
+
+    public static void generateWords() {
+        //example for usandfriends
+        knownWords.add("Hi");
+        funcs4Words.add("greeting");
+    }
+
+    public static void parse(String line) {
+        //usandfriends
+        //scan sentence for words and replace with simpler words
+        if (line.contains("Hello")) { 
+            line.replace("Hello", "Hi");
+        }
+        //...
+        for (int i; i < list.size(); i++) {
+            if (line.contains(list.get(i))) {
+                if (funcs4Words.get(i)=="greetings") {
+                    greetings();
+                }  
+            }
+        }
+    }
 
     public static void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,7 +80,12 @@ public class AI implements Runnable {
     }
 
     public static void respond() {
-
+        //usandfriends:
+        if (numToRespond > 0) {
+            for (int i=0; i < numToRespond; numToRespond--) {
+                parse(toRespond[i]);
+            }
+        }
     }
 
     public static void modules() {
@@ -59,7 +110,9 @@ public class AI implements Runnable {
     }
 
     public static void main(String[] args) {
+        generateWords();
         System.out.println(output);
+        output = "";
         (new Thread(new AI())).start();
         (new Thread(new AI())).start();
         (new Thread(new AI())).start();
