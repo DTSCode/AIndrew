@@ -57,6 +57,7 @@ public class AI implements Runnable {
         //...
         for (int i = 1; i <= knownWords.size(); i++) {
             System.out.println("In for loop");
+            System.out.println(knownWords.size());
             int i2 = i - 1;
             if (line.contains(knownWords.get(i2))) {
             	System.out.println("Contains greeting");
