@@ -81,7 +81,7 @@ public class AI implements Runnable {
 
     public static void respond() {
         //usandfriends:
-        while (numToRespond == 0) {
+        while (numToRespond == -1) {
         	System.out.println("Waiting");
         	try {
         		Thread.sleep(500);
@@ -90,7 +90,7 @@ public class AI implements Runnable {
         		
         	}
         }
-        if (numToRespond > 0) {
+        if (numToRespond >= 0) {
             for (int i=0; i < numToRespond; numToRespond--) {
                 parse(toRespond[i]);
             }
@@ -110,9 +110,8 @@ public class AI implements Runnable {
 
         if (threadcount == 2) {
         	threadcount++;
-	    	while (true) {
-            		respond();
-	    	}
+            	System.out.println("Ready to Respond");
+            	respond();
         }
         if (threadcount == 0) {
             threadcount++;
