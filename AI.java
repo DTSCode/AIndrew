@@ -65,7 +65,6 @@ public class AI implements Runnable {
                 }
             }
         }
-    }
 
     public static void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
