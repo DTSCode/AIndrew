@@ -75,6 +75,7 @@ public class AI implements Runnable {
                 if (input.length() > 0) {
                     numToRespond++;
                     toRespond[numToRespond] = input;
+                    System.out.println("Inputted");
                     input = "";
                 }
             } catch (IOException i) {
