@@ -53,7 +53,7 @@ public class AI implements Runnable {
         //scan sentence for words and replace with simpler words
         System.out.println("Parsing");
         if (line.contains("Hello")) { 
-            line.replaceAll("Hello", "Hi");
+            line = line.replaceAll("Hello", "Hi");
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
