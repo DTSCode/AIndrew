@@ -94,7 +94,7 @@ public class AI implements Runnable {
 
     public static void respond() {
         //usandfriends:
-        while true() {
+        while (true) {
 	 while (numToRespond == -1) {
         		try {
         			Thread.sleep(500);
