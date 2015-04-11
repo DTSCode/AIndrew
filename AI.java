@@ -54,12 +54,13 @@ public class AI implements Runnable {
             line.replace("Hello", "Hi");
         }
         //...
-        for (int i = 0; i <= knownWords.size(); i++) {
-            if (line.contains(knownWords.get(i))) {
-                if (funcs4Words.get(i)=="greeting") {
+        for (int i = 1; i <= knownWords.size(); i++) {
+            int i2 = i - 1;
+            if (line.contains(knownWords.get(i2))) {
+                if (funcs4Words.get(i2)=="greeting") {
                     greeting();
                 }  
-                if (funcs4Words.get(i)=="other") {
+                if (funcs4Words.get(i2)=="other") {
                 	//other();
                 }
                 }
