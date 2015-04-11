@@ -22,6 +22,7 @@ public class AI implements Runnable {
     	System.out.println("Randomizing");
         Random r = new Random();
         int responseToUse = r.nextInt(5 - 1) + 1;
+        System.out.println(responseToUse);
         switch (responseToUse) {
             case 1:
                 output = "Hi" + output;
