@@ -94,18 +94,20 @@ public class AI implements Runnable {
 
     public static void respond() {
         //usandfriends:
-        while (numToRespond == -1) {
-        	try {
-        		Thread.sleep(500);
-        	}
-        	catch (Exception e) {
+        while true() {
+	 while (numToRespond == -1) {
+        		try {
+        			Thread.sleep(500);
+        		}
+        		catch (Exception e) {
         		
-        	}
-        }
-        if (numToRespond >= 0) {
-            for (int i=-1; i < numToRespond; numToRespond--) {
-                parse(toRespond[numToRespond]);
-            }
+        		}
+         }
+         if (numToRespond >= 0) {
+        	 for (int i=-1; i < numToRespond; numToRespond--) {
+        	   parse(toRespond[numToRespond]);
+        	 }
+	 }
         }
     }
 
