@@ -1,5 +1,3 @@
-package AI;
-
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,6 +40,7 @@ public class AILang implements Runnable {
     }
 
     public static void Modules() throws Exception {
+	System.out.println("Loading Modules");
         String workingDir = System.getProperty("user.dir");
         File folder = new File(workingDir + "/modules/");
         File[] listOfFiles = folder.listFiles();

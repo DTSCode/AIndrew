@@ -1,11 +1,10 @@
-package ai;
-
 import java.io.File;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.*;
 
 public class AI implements Runnable {
 
@@ -54,10 +53,10 @@ public class AI implements Runnable {
             line.replace("Hello", "Hi");
         }
         //...
-        for (int i; i < list.size(); i++) {
-            if (line.contains(list.get(i))) {
-                if (funcs4Words.get(i)=="greetings") {
-                    greetings();
+        for (int i = 0; i < knownWords.size(); i++) {
+            if (line.contains(knownWords.get(i))) {
+                if (funcs4Words.get(i)=="greeting") {
+                    greeting();
                 }  
             }
         }
@@ -65,6 +64,7 @@ public class AI implements Runnable {
 
     public static void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	System.out.println("Ready for Input.");
         while (input.length() == 0) {
             try {
                 input = br.readLine();
@@ -88,7 +88,7 @@ public class AI implements Runnable {
         }
     }
 
-    public static void modules() {
+    public static void modules() throws Exception {
         AILang.Modules();
     }
 
@@ -100,11 +100,17 @@ public class AI implements Runnable {
         }
 
         if (threadcount == 2) {
-            respond();
-            threadcount++;
+	    while (true) {
+            	respond();
+	    }
         }
         if (threadcount == 0) {
-            modules();
+		try {
+           	 	modules();
+		} catch (Exception e) {
+
+		}
+	    System.out.println("Modules Loaded");
             threadcount++;
         }
     }
@@ -122,13 +128,15 @@ public class AI implements Runnable {
         while (true) {
             //get photo
             //save photo
-            face = new File("~/new.png");
+	    /*            
+	   face = new File("~/new.png");
             try {
                 ImageIO.write(image1, "png", face);
             } catch (IOException a) {
                 System.out.println("Error");
             }
-        //recognize
+	    */
+            //recognize
             //check to see if person was always there
             //say a response if ^ = false
         }
