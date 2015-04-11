@@ -19,6 +19,7 @@ public class AI implements Runnable {
     public static List<String> funcs4Words = new ArrayList<String>();
 
     public static void greeting() {
+    	System.out.println("Randomizing");
         Random r = new Random();
         int responseToUse = r.nextInt(5 - 1) + 1;
         switch (responseToUse) {
