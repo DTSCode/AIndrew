@@ -96,7 +96,7 @@ public class AI implements Runnable {
         }
         if (numToRespond >= 0) {
             for (int i=-1; i < numToRespond; numToRespond--) {
-                parse(toRespond[i]);
+                parse(toRespond[numToRespond]);
             }
         }
     }
