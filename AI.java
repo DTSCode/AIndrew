@@ -89,7 +89,12 @@ public class AI implements Runnable {
         	for(int i = 0; int i < allParts.size(); i++) {
         		for (int z = 0; int z < knownWords.size(); z++) {
         			if (knownWords.getIndex(z) == allParts.getIndex(i)) {
-        				
+        				switch(funcs4Words.get(z)){
+        					case "greeting":
+        						greeting();
+        						break;
+        					case "leaving":
+        						break;
         			}
         		}
         	}
