@@ -19,10 +19,8 @@ public class AI implements Runnable {
     public static List<String> funcs4Words = new ArrayList<String>();
 
     public static void greeting() {
-    	System.out.println("Randomizing");
         Random r = new Random();
         int responseToUse = r.nextInt(5 - 1) + 1;
-        System.out.println(responseToUse);
         switch (responseToUse) {
             case 1:
                 output = "Hi" + output;
@@ -51,19 +49,15 @@ public class AI implements Runnable {
     public static void parse(String line) {
         //usandfriends
         //scan sentence for words and replace with simpler words
-        System.out.println("Parsing");
         if (line.contains("Hello")) { 
             line = line.replaceAll("Hello", "Hi");
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
+        /*
         for (int i = 0; i + 1 <= knownWords.size(); i++) {
-            System.out.println("In for loop");
-            System.out.println(knownWords.get(i));
-            if (line.contains(knownWords.get(i)) || line == knownWords.get(i)) {
-            	System.out.println("Contains greeting");
+            if (line.contains(knownWords.get(i))) {
                 if (funcs4Words.get(i)=="greeting") {
-                    System.out.println("Found func");
                     greeting();
                 }  
                 if (funcs4Words.get(i)=="other") {
@@ -71,6 +65,10 @@ public class AI implements Runnable {
                 }
                 }
             }
+        */
+        //correct method
+        String firstPart[] = new String[10];
+        List<String> allParts = new ArrayList<String>;
         System.out.println(output);
         output = "";
         }
@@ -84,7 +82,6 @@ public class AI implements Runnable {
                 if (input.length() > 0) {
                     numToRespond++;
                     toRespond[numToRespond] = input;
-                    System.out.println("Inputted");
                     input = "";
                 }
             } catch (IOException i) {
@@ -125,7 +122,6 @@ public class AI implements Runnable {
 
         if (threadcount == 2) {
         	threadcount++;
-            	System.out.println("Ready to Respond");
             	respond();
         }
         if (threadcount == 0) {
@@ -135,7 +131,6 @@ public class AI implements Runnable {
 		} catch (Exception e) {
 
 		}
-	    System.out.println("Modules Loaded");
         }
     }
 
