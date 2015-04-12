@@ -68,7 +68,7 @@ public class AI implements Runnable {
         */
         //correct method
         String firstPart[] = new String[10];
-        List<String> allParts = new ArrayList<String>;
+        List<String> allParts = new ArrayList<String>();
         System.out.println(output);
         output = "";
         }
