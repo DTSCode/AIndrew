@@ -85,7 +85,7 @@ public class AI implements Runnable {
         		allParts.add(fromBeginningPart[i]);
         	}
 		int chars = getCharsInStringArr(fromBeginningPart);
-        	line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1, "");
+        	line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1), "");
         	for (int i = 0; i < fromBeginningPart.length; i++) {
         		fromBeginningPart[i] = "";
         	}
