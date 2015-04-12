@@ -46,11 +46,21 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
     }
 
+	public static int getCharsInStringArr(String[] stringArr) {
+	int j = 0;
+		for (int i = 0; i <= stringArr.length; i++) {
+			j += stringArr[i].length();
+		}
+	return j;
+	}
+
     public static void parse(String line) {
         //usandfriends
         //scan sentence for words and replace with simpler words
-        if (line.contains("Hello")) { 
-            line = line.replaceAll("Hello", "Hi");
+        //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil ifs checks
+        line = line.toLowerCase();
+        if (line.contains("hello")) { 
+            line = line.replaceAll("hello", "Hi");
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
@@ -67,8 +77,24 @@ public class AI implements Runnable {
             }
         */
         //correct method
-        String firstPart[] = new String[10];
+        String fromBeginningPart[] = new String[10];
         List<String> allParts = new ArrayList<String>();
+        while (line != "") {
+        	fromBeginningPart = line.split(" ", 10);
+        	for (int i = 0; i <= 9; i++) {
+        		allParts.add(fromBeginningPart[i]);
+        	}
+		int chars = getCharsInStringArr(fromBeginningPart);
+        	line = line.replace(line.substr(0, chars + 9)), "");
+        	for(int i = 0; int i < allParts.size(); i++) {
+        		for (int z = 0; int z < knownWords.size(); z++) {
+        			if (knownWords.getIndex(z) == allParts.getIndex(i)) {
+        				
+        			}
+        		}
+        	}
+        }        
+        //
         System.out.println(output);
         output = "";
         }
