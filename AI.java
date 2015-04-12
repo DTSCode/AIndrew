@@ -94,7 +94,7 @@ public class AI implements Runnable {
         						greeting();
         						break;
         					case "leaving":
-        						break;
+        				}		break;
         			}
         		}
         	}
