@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +11,7 @@ public class AILang implements Runnable {
 
     public static void parse(String code) throws Exception {
         int coloncount = 0;
-        for (int f = 0; f< code.length(); f++) {
+        for (int f = 0; f < code.length(); f++) {
             char test = code.charAt(f);
             if (test == ';') {
                 coloncount++;
@@ -18,13 +19,13 @@ public class AILang implements Runnable {
         }
         String[] lines = new String[coloncount];
         lines = code.split(";");
-        for (int f =0; f < lines.length; f++) {
-            
+        for (int f = 0; f < lines.length; f++) {
+
         }
     }
 
     public void run() {
-      //open and parse files
+        //open and parse files
         //parsing should have support for vars, sockets, files, functions, loops, checks, and math operations. Each file should have a list of tags for related words
         try {
             r = new BufferedReader(new FileReader(new File(files[i])));
@@ -40,7 +41,7 @@ public class AILang implements Runnable {
     }
 
     public static void Modules() throws Exception {
-	System.out.println("Loading Modules");
+        System.out.println("Loading Modules");
         String workingDir = System.getProperty("user.dir");
         File folder = new File(workingDir + "/modules/");
         File[] listOfFiles = folder.listFiles();

@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -46,70 +47,71 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
     }
 
-	public static int getCharsInStringArr(String[] stringArr) {
-	int j = 0;
-		for (int i = 0; i < stringArr.length; i++) {
-			j += stringArr[i].length();
-		}
-	return j;
-	}
+    public static int getCharsInStringArr(String[] stringArr) {
+        int j = 0;
+        for (int i = 0; i < stringArr.length; i++) {
+            j += stringArr[i].length();
+        }
+        return j;
+    }
 
     public static void parse(String line) {
         //usandfriends
         //scan sentence for words and replace with simpler words
         //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil ifs checks
         line = line.toLowerCase();
-        if (line.contains("hello")) { 
+        if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
         /*
-        for (int i = 0; i + 1 <= knownWords.size(); i++) {
-            if (line.contains(knownWords.get(i))) {
-                if (funcs4Words.get(i)=="greeting") {
-                    greeting();
-                }  
-                if (funcs4Words.get(i)=="other") {
-                	//other();
-                }
-                }
-            }
-        */
+         for (int i = 0; i + 1 <= knownWords.size(); i++) {
+         if (line.contains(knownWords.get(i))) {
+         if (funcs4Words.get(i)=="greeting") {
+         greeting();
+         }  
+         if (funcs4Words.get(i)=="other") {
+         //other();
+         }
+         }
+         }
+         */
         //correct method
         String fromBeginningPart[] = new String[10];
         List<String> allParts = new ArrayList<String>();
         while (line != "") {
-        	fromBeginningPart = line.split(" ", 10);
-        	for (int i = 0; i < fromBeginningPart.length; i++) {
-        		allParts.add(fromBeginningPart[i]);
-        	}
-		int chars = getCharsInStringArr(fromBeginningPart);
-        	line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1), "");
-        	for (int i = 0; i < fromBeginningPart.length; i++) {
-        		fromBeginningPart[i] = "";
-        	}
-        	for(int i = 0; i < allParts.size(); i++) {
-        		for (int z = 0; z < knownWords.size(); z++) {
-        			if (knownWords.get(z) == allParts.get(i)) {
-        				switch(funcs4Words.get(z)){
-        					case "greeting":
-        						greeting();
-        						break;
-        					case "leaving":
-        				}		break;
-        			}
-        		}
-        	}
-        }      
+            fromBeginningPart = line.split(" ", 10);
+            for (int i = 0; i < fromBeginningPart.length; i++) {
+                allParts.add(fromBeginningPart[i]);
+            }
+            int chars = getCharsInStringArr(fromBeginningPart);
+            line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1), "");
+            for (int i = 0; i < fromBeginningPart.length; i++) {
+                fromBeginningPart[i] = "";
+            }
+            for (int i = 0; i < allParts.size(); i++) {
+                for (int z = 0; z < knownWords.size(); z++) {
+                    if (knownWords.get(z) == allParts.get(i)) {
+                        switch (funcs4Words.get(z)) {
+                            case "greeting":
+                                greeting();
+                                break;
+                            case "farewell":
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         //
         System.out.println(output);
         output = "";
-        }
+    }
 
     public static void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	System.out.println("Ready for Input.");
+        System.out.println("Ready for Input.");
         while (input.length() == 0) {
             try {
                 input = br.readLine();
@@ -127,19 +129,18 @@ public class AI implements Runnable {
     public static void respond() {
         //usandfriends:
         while (true) {
-	 while (numToRespond == -1) {
-        		try {
-        			Thread.sleep(500);
-        		}
-        		catch (Exception e) {
-        		
-        		}
-         }
-         if (numToRespond >= 0) {
-        	 for (int i=-1; i < numToRespond; numToRespond--) {
-        	   parse(toRespond[numToRespond]);
-        	 }
-	 }
+            while (numToRespond == -1) {
+                try {
+                    Thread.sleep(500);
+                } catch (Exception e) {
+
+                }
+            }
+            if (numToRespond >= 0) {
+                for (int i = -1; i < numToRespond; numToRespond--) {
+                    parse(toRespond[numToRespond]);
+                }
+            }
         }
     }
 
@@ -155,16 +156,16 @@ public class AI implements Runnable {
         }
 
         if (threadcount == 2) {
-        	threadcount++;
-            	respond();
+            threadcount++;
+            respond();
         }
         if (threadcount == 0) {
             threadcount++;
-		try {
-           	 	modules();
-		} catch (Exception e) {
+            try {
+                modules();
+            } catch (Exception e) {
 
-		}
+            }
         }
     }
 
@@ -182,13 +183,13 @@ public class AI implements Runnable {
             //get photo
             //save photo
 	    /*            
-	   face = new File("~/new.png");
-            try {
-                ImageIO.write(image1, "png", face);
-            } catch (IOException a) {
-                System.out.println("Error");
-            }
-	    */
+             face = new File("~/new.png");
+             try {
+             ImageIO.write(image1, "png", face);
+             } catch (IOException a) {
+             System.out.println("Error");
+             }
+             */
             //recognize
             //check to see if person was always there
             //say a response if ^ = false
