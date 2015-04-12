@@ -81,11 +81,14 @@ public class AI implements Runnable {
         List<String> allParts = new ArrayList<String>();
         while (line != "") {
         	fromBeginningPart = line.split(" ", 10);
-        	for (int i = 0; i < 9; i++) {
+        	for (int i = 0; i < fromBeginning.length; i++) {
         		allParts.add(fromBeginningPart[i]);
         	}
 		int chars = getCharsInStringArr(fromBeginningPart);
-        	line = line.replace(line.substring(0, chars + 9), "");
+        	line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1, "");
+        	for (int i = 0; i < fromBeginningPart.length; i++) {
+        		fromBeginningPart[i] = "";
+        	}
         	for(int i = 0; i < allParts.size(); i++) {
         		for (int z = 0; z < knownWords.size(); z++) {
         			if (knownWords.get(z) == allParts.get(i)) {
@@ -98,7 +101,7 @@ public class AI implements Runnable {
         			}
         		}
         	}
-        }        
+        }      
         //
         System.out.println(output);
         output = "";
