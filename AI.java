@@ -85,10 +85,10 @@ public class AI implements Runnable {
         		allParts.add(fromBeginningPart[i]);
         	}
 		int chars = getCharsInStringArr(fromBeginningPart);
-        	line = line.replace(line.substr(0, chars + 9), "");
+        	line = line.replace(line.substring(0, chars + 9), "");
         	for(int i = 0; i < allParts.size(); i++) {
         		for (int z = 0; z < knownWords.size(); z++) {
-        			if (knownWords.getIndex(z) == allParts.getIndex(i)) {
+        			if (knownWords.get(z) == allParts.get(i)) {
         				switch(funcs4Words.get(z)){
         					case "greeting":
         						greeting();
