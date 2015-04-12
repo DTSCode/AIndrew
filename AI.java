@@ -48,7 +48,7 @@ public class AI implements Runnable {
 
 	public static int getCharsInStringArr(String[] stringArr) {
 	int j = 0;
-		for (int i = 0; i <= stringArr.length; i++) {
+		for (int i = 0; i < stringArr.length; i++) {
 			j += stringArr[i].length();
 		}
 	return j;
