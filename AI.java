@@ -81,7 +81,7 @@ public class AI implements Runnable {
         List<String> allParts = new ArrayList<String>();
         while (line != "") {
         	fromBeginningPart = line.split(" ", 10);
-        	for (int i = 0; i < fromBeginning.length; i++) {
+        	for (int i = 0; i < fromBeginningPart.length; i++) {
         		allParts.add(fromBeginningPart[i]);
         	}
 		int chars = getCharsInStringArr(fromBeginningPart);
