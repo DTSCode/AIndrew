@@ -50,7 +50,7 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
     }
 
-	public String[] removeNull(String[] a) {
+	public static String[] removeNull(String[] a) {
 		Arraylist<String> notNull = new Arraylist<String>();
    		for (String str : a)
       		if (str != null)
