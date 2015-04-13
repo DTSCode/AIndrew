@@ -112,7 +112,8 @@ public class AI implements Runnable {
             }
         }
         //
-        allParts.removeAll();
+        allParts.clear();
+        while(allParts.remove(null));
         System.out.println(output);
         output = "";
     }
