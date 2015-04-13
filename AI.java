@@ -91,11 +91,11 @@ public class AI implements Runnable {
             }
             System.out.println("Broken up... getting chars");
             chars += getCharsInStringArr(fromBeginningPart);
-            System.out.println("Got quantity:" + chars);
-            if (line.split().length > 1) {
+            System.out.println("Got quantity: " + chars);
+            if (line.split(" ").length > 1) {
                 line = line.replace(line.substring(0, chars + (line.split().length - 1)), "");
             }
-            if (line.split().length <= 1) {
+            if (line.split(" ").length <= 1) {
             	line = line.replace(line.substring(0, chars), "");
             }
             for (int i = 0; i < fromBeginningPart.length; i++) {
