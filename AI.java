@@ -50,7 +50,16 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
     }
 
+	public String[] removeNull(String[] a) {
+		Arraylist<String> notNull = new Arraylist<String>();
+   		for (String str : a)
+      		if (str != null)
+         		notNull.add(str);
+   		return notNull.toArray(new String[0]);
+	}
+
     public static int getCharsInStringArr(String[] stringArr) {
+    	stringArr =  removeNull(stringArr);
         int j = 0;
         for (int i = 0; i < stringArr.length; i++) {
             System.out.println("In loop");
