@@ -92,7 +92,12 @@ public class AI implements Runnable {
             System.out.println("Broken up... getting chars");
             chars += getCharsInStringArr(fromBeginningPart);
             System.out.println("Got quantity:" + chars);
-            line = line.replace(line.substring(0, chars + count - 1), "");
+            if (line.split().length > 1) {
+                line = line.replace(line.substring(0, chars + (line.split().length - 1)), "");
+            }
+            if (line.split().length <= 1) {
+            	line = line.replace(line.substring(0, chars), "");
+            }
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 fromBeginningPart[i] = "";
             }
