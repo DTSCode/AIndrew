@@ -51,7 +51,7 @@ public class AI implements Runnable {
     }
 
 	public static String[] removeNull(String[] a) {
-		Arraylist<String> notNull = new Arraylist<String>();
+		ArrayList<String> notNull = new ArrayList<String>();
    		for (String str : a)
       		if (str != null)
          		notNull.add(str);
