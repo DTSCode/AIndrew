@@ -9,6 +9,8 @@ import java.util.*;
 
 public class AI implements Runnable {
 
+    public static String fromBeginningPart[] = new String[10];
+    public static List<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
     public static int threadcount = 0;
@@ -81,8 +83,6 @@ public class AI implements Runnable {
         }
 */
         //correct method
-        String fromBeginningPart[] = new String[10];
-        List<String> allParts = new ArrayList<String>();
         while (line != "") {
             int count = line.length() - line.replace(" ", "").length();
             fromBeginningPart = line.split(" ", count);
