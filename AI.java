@@ -9,6 +9,7 @@ import java.util.*;
 
 public class AI implements Runnable {
 
+    public static int chars;
     public static BufferedImage image1;
     public static int threadcount = 0;
     public static String input = "";
@@ -50,7 +51,9 @@ public class AI implements Runnable {
     public static int getCharsInStringArr(String[] stringArr) {
         int j = 0;
         for (int i = 0; i < stringArr.length; i++) {
+            System.out.println("In loop");
             j += stringArr[i].length();
+            System.out.println("Got length");
         }
         return j;
     }
@@ -65,40 +68,44 @@ public class AI implements Runnable {
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
-        /*
-         for (int i = 0; i + 1 <= knownWords.size(); i++) {
-         if (line.contains(knownWords.get(i))) {
-         if (funcs4Words.get(i)=="greeting") {
-         greeting();
-         }  
-         if (funcs4Words.get(i)=="other") {
-         //other();
-         }
-         }
-         }
-         */
+/*
+        for (int i = 0; i + 1 <= knownWords.size(); i++) {
+            if (line.contains(knownWords.get(i))) {
+                if (funcs4Words.get(i) == "greeting") {
+                    greeting();
+                }
+                if (funcs4Words.get(i) == "other") {
+                    //other();
+                }
+            }
+        }
+*/
         //correct method
         String fromBeginningPart[] = new String[10];
         List<String> allParts = new ArrayList<String>();
         while (line != "") {
-            fromBeginningPart = line.split(" ", 10);
+            int count = line.length() - line.replace(" ", "").length();
+            fromBeginningPart = line.split(" ", count);
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 allParts.add(fromBeginningPart[i]);
             }
-            int chars = getCharsInStringArr(fromBeginningPart);
-            line = line.replace(line.substring(0, chars + fromBeginningPart.length - 1), "");
+            System.out.println("Broken up... getting chars");
+            chars += getCharsInStringArr(fromBeginningPart);
+            System.out.println("Got quantity:" + chars);
+            line = line.replace(line.substring(0, chars + (fromBeginningPart.length - 2)), "");
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 fromBeginningPart[i] = "";
             }
+            System.out.println("Deleted beginning of String");
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
-                    if (knownWords.get(z) == allParts.get(i)) {
+                    if (knownWords.get(z).equals(allParts.get(i))) {
                         switch (funcs4Words.get(z)) {
                             case "greeting":
                                 greeting();
                                 break;
                             case "farewell":
-                            break;
+                                break;
                         }
                     }
                 }
