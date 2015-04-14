@@ -78,7 +78,7 @@ public class AI implements Runnable {
             line = line.replaceAll("hello", "Hi");
         }
         if (line.contains("hi") {
-        	line = line.replaceAll("hi", "hello");
+        	line = line.replaceAll("hi", "Hi");
         }
         //...
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
