@@ -77,7 +77,7 @@ public class AI implements Runnable {
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
         }
-        if (line.contains("hi") {
+        if (line.contains("hi")) {
         	line = line.replaceAll("hi", "Hi");
         }
         //...
