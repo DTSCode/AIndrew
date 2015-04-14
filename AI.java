@@ -106,10 +106,10 @@ public class AI implements Runnable {
             System.out.println("Got quantity: " + chars);
             //Fix
             if ((line.split(" ").length - 1) < 1) {
-            	line = line.replaceAll(line.substring(0, (chars+1)), "");
+            	line = line.replaceAll(line.substring(0, (chars) - 1), "");
             }
             if ((line.length() - line.replace(" ", "").length()) >= 1) {
-                line = line.replaceAll(line.substring(0, chars + ((line.split(" ").length+1))), "");
+                line = line.replaceAll(line.substring(0, chars + ((line.split(" ").length) - 1)), "");
             }
             //
             for (int i = 0; i < fromBeginningPart.length; i++) {
