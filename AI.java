@@ -10,7 +10,7 @@ import java.util.*;
 public class AI implements Runnable {
 
 	public static int numToRemove = 0;
-    public static String fromBeginningPart[] = new String[10];
+	public static String fromBeginningPart[] = new String[10];
     public static List<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
@@ -51,6 +51,20 @@ public class AI implements Runnable {
         //TRY TO HAVE A MAX OF 20 FUNCTIONS THIS FOR TALKING, NOT COMMANDS
         knownWords.add("Hi");
         funcs4Words.add("greeting");
+        knownWords.add("feel");
+	funcs4Words.add("feeling");
+	knownWords.add("is");
+	funcs4Words.add("present_state");
+	knownWords.add("who|what|when|where|why");
+	funcs4Words.add("question");
+	knownWords.add("can|may");
+	funcs4Words.add("permission");
+	knownWords.add("bye");
+	funcs4Words.add("goodbye");
+	knownWords.add("have");
+	funcs4Words.add("possession");
+	knownWords.add("want");
+	funcs4Words.add("want");
     }
 
 	public static String[] removeNull(String[] a) {
