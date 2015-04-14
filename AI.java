@@ -106,10 +106,9 @@ public class AI implements Runnable {
             chars = 0;
             chars += getCharsInStringArr(fromBeginningPart);
             System.out.println("Got quantity: " + chars);
-            System.out.println(chars - 1);
             //Fix
             numToRemove = chars + line.split(" ").length - 1;
-            line = line.replaceAll(line.substring(0, chars + ((line.split(" ").length) - 1)), "");
+            line = line.substring(numToRemove, line.length());
             //
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 fromBeginningPart[i] = "";
