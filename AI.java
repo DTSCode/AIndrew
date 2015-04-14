@@ -96,7 +96,7 @@ public class AI implements Runnable {
         }
 */
         //correct method
-        while (line != "") {
+        while (!line.equals("")) {
             int count = line.length() - line.replace(" ", "").length();
             fromBeginningPart = line.split(" ", count);
             for (int i = 0; i < fromBeginningPart.length; i++) {
