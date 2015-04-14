@@ -114,6 +114,7 @@ public class AI implements Runnable {
                 fromBeginningPart[i] = "";
             }
             System.out.println("Deleted beginning of String");
+            System.out.println('"' + line + '"');
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
                     if (knownWords.get(z).equals(allParts.get(i))) {
