@@ -9,6 +9,7 @@ import java.util.*;
 
 public class AI implements Runnable {
 
+	public static String oldLine;
 	public static int numToRemove = 0;
 	public static String fromBeginningPart[] = new String[10];
     public static List<String> allParts = new ArrayList<String>();
@@ -51,20 +52,31 @@ public class AI implements Runnable {
         //TRY TO HAVE A MAX OF 20 FUNCTIONS THIS FOR TALKING, NOT COMMANDS
         knownWords.add("Hi");
         funcs4Words.add("greeting");
-        knownWords.add("feel");
-	funcs4Words.add("feeling");
 	knownWords.add("is");
-	funcs4Words.add("present_state");
-	knownWords.add("who|what|when|where|why");
-	funcs4Words.add("question");
-	knownWords.add("can|may");
-	funcs4Words.add("permission");
-	knownWords.add("bye");
-	funcs4Words.add("goodbye");
+	funcs4Words.add("am");
+	knownWords.add("Who");
+	funcs4Words.add("past_data");
+	knownWords.add("What");
+	funcs4Words.add("past_data");
+	knownWords.add("When");
+	funcs4Words.add("past_data");
+	knownWords.add("Where");
+	funcs4Words.add("past_data");
+	knownWords.add("Why");
+	funcs4Words.add("past_data");
+	knownWords.add("Can");
+	funcs4Words.add("able");
+	knownWords.add("Bye");
+	funcs4Words.add("farewell");
 	knownWords.add("have");
-	funcs4Words.add("possession");
+	funcs4Words.add("possess");
 	knownWords.add("want");
 	funcs4Words.add("want");
+	knownWords.add("do");
+	funcs4Words.add("action");
+	knownWords.add("data");
+	funcs4Words.add("log");
+	
     }
 
 	public static String[] removeNull(String[] a) {
@@ -90,6 +102,7 @@ public class AI implements Runnable {
         //usandfriends
         //scan sentence for words and replace with simpler words
         //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil ifs checks
+        oldLine = line;
         line = line.toLowerCase();
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
