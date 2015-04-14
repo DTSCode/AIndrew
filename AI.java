@@ -56,7 +56,7 @@ public class AI implements Runnable {
    		for (String str : a)
       		if (str != null)
          		notNull.add(str);
-   		return notNull.toArray(new String[0]);
+   		return notNull.toArray(new String[notNull.size()]);
 	}
 
     public static int getCharsInStringArr(String[] stringArr) {
