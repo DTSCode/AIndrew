@@ -9,6 +9,7 @@ import java.util.*;
 
 public class AI implements Runnable {
 
+	public static int numToRemove = 0;
     public static String fromBeginningPart[] = new String[10];
     public static List<String> allParts = new ArrayList<String>();
     public static int chars;
@@ -102,15 +103,13 @@ public class AI implements Runnable {
                 allParts.add(fromBeginningPart[i]);
             }
             System.out.println("Broken up... getting chars");
+            chars = 0;
             chars += getCharsInStringArr(fromBeginningPart);
             System.out.println("Got quantity: " + chars);
+            System.out.println(chars - 1);
             //Fix
-            if ((line.split(" ").length - 1) < 1) {
-            	line = line.replaceAll(line.substring(0, (chars) - 1), "");
-            }
-            if ((line.length() - line.replace(" ", "").length()) >= 1) {
-                line = line.replaceAll(line.substring(0, chars + ((line.split(" ").length) - 1)), "");
-            }
+            numToRemove = chars + line.split(" ").length - 1;
+            line = line.replaceAll(line.substring(0, chars + ((line.split(" ").length) - 1)), "");
             //
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 fromBeginningPart[i] = "";
