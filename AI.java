@@ -46,7 +46,9 @@ public class AI implements Runnable {
     }
 
     public static void generateWords() {
-        //example for usandfriends
+        //N0VACANE
+        //in this order, word, function
+        //TRY TO HAVE A MAX OF 20 FUNCTIONS THIS FOR TALKING, NOT COMMANDS
         knownWords.add("Hi");
         funcs4Words.add("greeting");
     }
