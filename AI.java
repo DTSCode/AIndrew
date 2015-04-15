@@ -10,7 +10,7 @@ import java.util.Arrays.*;
 
 public class AI implements Runnable {
 
-	public static ArrayList<List<String>> synonyms = new ArrayList<ArrayList<String>>();
+	public static ArrayList<List<String>> synonyms = new ArrayList<List<String>>();
 	public static String oldLine;
 	public static int numToRemove = 0;
 	public static String fromBeginningPart[] = new String[10];
