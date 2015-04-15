@@ -115,8 +115,8 @@ public class AI implements Runnable {
 	funcs4Words.add("multiplePronoun");
 
 	for (int i = 0; i < synonyms.size(); i++) {
-		for (int z = 0; z< synonyms.get(i).size(); z++) { synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); }
-		for (int z = 0; z< synonyms.get(i).size(); z++) { for (int x = 0; x < synonyms.get(i).size(); x++) { if (synonyms.get(i).get(z).equals(synonyms.get(i).get(x))) { synonyms.get(i).remove(x); } } }
+		for (int z = synonyms.get(i).size(); z > 0 z--) { synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); }
+		for (int z = synonyms.get(i).size(); z > 0; z--) { for (int x = synonyms.get(i).size(); x > 0; x--) { if (synonyms.get(i).get(z).equals(synonyms.get(i).get(x))) { synonyms.get(i).remove(x); } } }
 
 	} 
     }
