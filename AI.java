@@ -69,49 +69,49 @@ public class AI implements Runnable {
 	funcs4Words.add("past_data");
 
 	knownWords.add("Can");
-	synonyms.add(Array.asList("May", "can"));
+	synonyms.add(Arrays.asList("May", "can"));
 	funcs4Words.add("able");
 
 	knownWords.add("Bye");
-	synonyms.add(Array.asList("Farewell", "bye", "Goodbye", "Seeya"));
+	synonyms.add(Arrays.asList("Farewell", "bye", "Goodbye", "Seeya"));
 	funcs4Words.add("farewell");
 
 	knownWords.add("have");
-	synonyms.add(Array.asList("owns", "has"));
+	synonyms.add(Arrays.asList("owns", "has"));
 	funcs4Words.add("possess");
 
 	knownWords.add("want");
-	synonyms.add(Array.asList("desire"));
+	synonyms.add(Arrays.asList("desire"));
 	funcs4Words.add("want");
 
 	knownWords.add("need");
-	synonyms.add(Array.asList("require"));
+	synonyms.add(Arrays.asList("require"));
 	funcs4Words.add("need");
 
 	knownWords.add("doing");
-	synonyms.add(Array.asList("completing"));
+	synonyms.add(Arrays.asList("completing"));
 	funcs4Words.add("action");
 
 	knownWords.add("data");
 	//need bigger numbers
 	//edit number time and name to actually be those things, not just words
-	synonyms.add(Array.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero"));
+	synonyms.add(Arrays.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero"));
 	funcs4Words.add("log");
 
 	knownWords.add("a");
-	synonyms.add(Array.asList("an", "the"));
+	synonyms.add(Arrays.asList("an", "the"));
 	funcs4Words.add("article");
 
 	knownWords.add("some");
-	synonyms.add(Array.asList("few", "couple", "bunch"));
+	synonyms.add(Arrays.asList("few", "couple", "bunch"));
 	funcs4Words.add("few");
 
 	knownWords.add("it");
-	synonyms.add(Array.asList("him", "he", "she", "her"));
-	funcs4Words("singularPronoun");
+	synonyms.add(Arrays.asList("him", "he", "she", "her"));
+	funcs4Words.add("singularPronoun");
 
-	kownWords.add("them");
-	synonyms.add(Array.asList("they", "boys", "girls"));
+	knownWords.add("them");
+	synonyms.add(Arrays.asList("they", "boys", "girls"));
 	funcs4Words.add("multiplePronoun");
 
 	for (int i = 0; i < synonyms.size(); i++) {
