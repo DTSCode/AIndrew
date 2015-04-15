@@ -9,6 +9,7 @@ import java.util.*;
 
 public class AI implements Runnable {
 
+	public static List<List<String>> synonyms = new ArrayList<ArrayList<String>>();
 	public static String oldLine;
 	public static int numToRemove = 0;
 	public static String fromBeginningPart[] = new String[10];
@@ -19,7 +20,7 @@ public class AI implements Runnable {
     public static String input = "";
     public static String output = "Loading A I....";
     public static File face;
-    public static String toRespond[] = new String[6];
+    public static List<String> toRespond = new ArrayList<String>();
     public static int numToRespond = -1;
     public static List<String> knownWords = new ArrayList<String>();
     public static List<String> funcs4Words = new ArrayList<String>();
@@ -53,35 +54,70 @@ public class AI implements Runnable {
     }
 
     public static void generateWords() {
-        //N0VACANE
-        //in this order, word, function
-        //TRY TO HAVE A MAX OF 20 FUNCTIONS THIS FOR TALKING, NOT COMMANDS
+        //still need past and future tense
         knownWords.add("Hi");
+	synonyms.add(Arrays.asList("Hello", "hi", "Salutations", "Greetings", "Hola", "Yo"));
         funcs4Words.add("greeting");
+
 	knownWords.add("is");
+	synonyms.add(Arrays.asList("am", "are"));
 	funcs4Words.add("am");
+
 	knownWords.add("W...");
+	synonyms.add(Arrays.asList("What", "Who", "When", "Where", "Why"));
 	funcs4Words.add("past_data");
+
 	knownWords.add("Can");
+	synonyms.add(Array.asList("May", "can"));
 	funcs4Words.add("able");
+
 	knownWords.add("Bye");
+	synonyms.add(Array.asList("Farewell", "bye", "Goodbye", "Seeya"));
 	funcs4Words.add("farewell");
+
 	knownWords.add("have");
+	synonyms.add(Array.asList("owns", "has"));
 	funcs4Words.add("possess");
+
 	knownWords.add("want");
+	synonyms.add(Array.asList("desire"));
 	funcs4Words.add("want");
-	knownWords.add("do");
+
+	knownWords.add("need");
+	synonyms.add(Array.asList("require"));
+	funcs4Words.add("need");
+
+	knownWords.add("doing");
+	synonyms.add(Array.asList("completing"));
 	funcs4Words.add("action");
+
 	knownWords.add("data");
+	//need bigger numbers
+	//edit number time and name to actually be those things, not just words
+	synonyms.add(Array.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero"));
 	funcs4Words.add("log");
+
 	knownWords.add("a");
+	synonyms.add(Array.asList("an", "the");
 	funcs4Words.add("article");
+
 	knownWords.add("some");
+	synonyms.add(Array.asList("few", "couple", "bunch"));
 	funcs4Words.add("few");
+
 	knownWords.add("it");
-	funcs4Words("singPronoun");
+	synonyms.add(Array.asList("him", "he", "she", "her"));
+	funcs4Words("singularPronoun");
+
 	kownWords.add("them");
-	funcs4Words.add("multPronoun");
+	synonyms.add(Array.asList("they", "boys", "girls"));
+	funcs4Words.add("multiplePronoun");
+
+	for (int i = 0; i < synonyms.size(); i++) {
+		for (int z = 0; z< synonyms.get(i).size(); z++) { synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); }
+		for (int z = 0; z< synonyms.get(i).size(); z++) { for (int x = 0; x < synonyms.get(i).size(); x++) { if (synonyms.get(i).get(z).equals(synonyms.get(i).get(x))) { synonyms.get(i).remove(x); } } }
+
+	} 
     }
 
 	public static String[] removeNull(String[] a) {
@@ -112,6 +148,7 @@ public class AI implements Runnable {
         //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil if checks
         oldLine = line;
         line = line.toLowerCase();
+
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
         }
@@ -175,7 +212,7 @@ public class AI implements Runnable {
                 input = br.readLine();
                 if (input.length() > 0) {
                     numToRespond++;
-                    toRespond[numToRespond] = input;
+                    toRespond.add(input);
                     input = "";
                 }
             } catch (IOException i) {
@@ -196,7 +233,7 @@ public class AI implements Runnable {
             }
             if (numToRespond >= 0) {
                 for (int i = -1; i < numToRespond; numToRespond--) {
-                    parse(toRespond[numToRespond]);
+                    parse(toRespond.get(numToRespond));
                 }
             }
         }
