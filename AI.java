@@ -61,53 +61,53 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
 
 	knownWords.add("is");
-	synonyms.add(Arrays.asList("am", "are"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("am", "are")));
 	funcs4Words.add("am");
 
 	knownWords.add("W...");
-	synonyms.add(Arrays.asList("What", "Who", "When", "Where", "Why"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("What", "Who", "When", "Where", "Why")));
 	funcs4Words.add("past_data");
 
 	knownWords.add("Can");
-	synonyms.add(Arrays.asList("May", "can"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("May", "can")));
 	funcs4Words.add("able");
 
 	knownWords.add("Bye");
-	synonyms.add(Arrays.asList("Farewell", "bye", "Goodbye", "Seeya"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("Farewell", "bye", "Goodbye", "Seeya")));
 	funcs4Words.add("farewell");
 
 	knownWords.add("have");
-	synonyms.add(Arrays.asList("owns", "has"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("owns", "has")));
 	funcs4Words.add("possess");
 
 	knownWords.add("want");
-	synonyms.add(Arrays.asList("desire"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("desire")));
 	funcs4Words.add("want");
 
 	knownWords.add("need");
-	synonyms.add(Arrays.asList("require"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("require")));
 	funcs4Words.add("need");
 
 	knownWords.add("doing");
-	synonyms.add(Arrays.asList("completing"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("completing")));
 	funcs4Words.add("action");
 
 	knownWords.add("data");
 	//need bigger numbers
 	//edit number time and name to actually be those things, not just words
-	synonyms.add(Arrays.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero")));
 	funcs4Words.add("log");
 
 	knownWords.add("a");
-	synonyms.add(Arrays.asList("an", "the"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("an", "the")));
 	funcs4Words.add("article");
 
 	knownWords.add("some");
-	synonyms.add(Arrays.asList("few", "couple", "bunch"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("few", "couple", "bunch")));
 	funcs4Words.add("few");
 
 	knownWords.add("it");
-	synonyms.add(Arrays.asList("him", "he", "she", "her"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("him", "he", "she", "her")));
 	funcs4Words.add("singularPronoun");
 
 	knownWords.add("them");
