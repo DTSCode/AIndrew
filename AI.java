@@ -98,7 +98,7 @@ public class AI implements Runnable {
 	funcs4Words.add("log");
 
 	knownWords.add("a");
-	synonyms.add(Array.asList("an", "the");
+	synonyms.add(Array.asList("an", "the"));
 	funcs4Words.add("article");
 
 	knownWords.add("some");
