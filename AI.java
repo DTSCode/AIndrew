@@ -91,13 +91,13 @@ public class AI implements Runnable {
 	knownWords.add("doing");
 	synonyms.add(new ArrayList<String>(Arrays.asList("completing")));
 	funcs4Words.add("action");
-	/*
+	
 	knownWords.add("data");
 	//need bigger numbers
 	//edit number time and name to actually be those things, not just words
 	synonyms.add(new ArrayList<String>(Arrays.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero")));
 	funcs4Words.add("log");
-	*/
+	
 	knownWords.add("a");
 	synonyms.add(new ArrayList<String>(Arrays.asList("an", "the")));
 	funcs4Words.add("article");
@@ -114,6 +114,8 @@ public class AI implements Runnable {
 	synonyms.add(new ArrayList<String>(Arrays.asList("they", "boys", "girls")));
 	funcs4Words.add("multiplePronoun");
 	//fix... throws Index out of bound
+	//removes repeats and allows lower case words
+	/*
 	for (int i = synonyms.size(); i > 1; i--) {
 		for (int z = synonyms.get(i).size(); z > 1; z--) { 
 			synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); 
@@ -124,8 +126,8 @@ public class AI implements Runnable {
 					synonyms.get(i).remove(x); } 
 			}
 		}
-
-	} 
+	}
+	*/
     }
 
 	public static String[] removeNull(String[] a) {
