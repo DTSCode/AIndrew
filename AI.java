@@ -114,7 +114,7 @@ public class AI implements Runnable {
 	synonyms.add(new ArrayList<String>(Arrays.asList("they", "boys", "girls")));
 	funcs4Words.add("multiplePronoun");
 
-	for (int i = 0; i < synonyms.size(); i++) {
+	for (int i = 0; i < synonyms.size() - 1; i++) {
 		for (int z = synonyms.get(i).size(); z > 0; z--) { 
 			synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); 
 		}
