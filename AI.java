@@ -113,7 +113,7 @@ public class AI implements Runnable {
 	knownWords.add("them");
 	synonyms.add(new ArrayList<String>(Arrays.asList("they", "boys", "girls")));
 	funcs4Words.add("multiplePronoun");
-
+	//fix... throws Index out of bound
 	for (int i = synonyms.size(); i > 1; i--) {
 		for (int z = synonyms.get(i).size(); z > 1; z--) { 
 			synonyms.get(i).add(synonyms.get(i).get(z).toLowerCase()); 
