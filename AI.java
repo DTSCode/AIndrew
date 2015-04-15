@@ -10,7 +10,7 @@ import java.util.Arrays.*;
 
 public class AI implements Runnable {
 
-	public static List<ArrayList<String>> synonyms = new ArrayList<String>();
+	public static List<ArrayList<String>> synonyms = new ArrayList<>();
 	public static String oldLine;
 	public static int numToRemove = 0;
 	public static String fromBeginningPart[] = new String[10];
@@ -57,7 +57,7 @@ public class AI implements Runnable {
     public static void generateWords() {
         //still need past and future tense
         knownWords.add("Hi");
-	synonyms.add(Arrays.asList("Hello", "hi", "Salutations", "Greetings", "Hola", "Yo"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("Hello", "hi", "Salutations", "Greetings", "Hola", "Yo")));
         funcs4Words.add("greeting");
 
 	knownWords.add("is");
@@ -111,7 +111,7 @@ public class AI implements Runnable {
 	funcs4Words.add("singularPronoun");
 
 	knownWords.add("them");
-	synonyms.add(Arrays.asList("they", "boys", "girls"));
+	synonyms.add(new ArrayList<String>(Arrays.asList("they", "boys", "girls")));
 	funcs4Words.add("multiplePronoun");
 
 	for (int i = 0; i < synonyms.size(); i++) {
