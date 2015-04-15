@@ -91,13 +91,13 @@ public class AI implements Runnable {
 	knownWords.add("doing");
 	synonyms.add(new ArrayList<String>(Arrays.asList("completing")));
 	funcs4Words.add("action");
-
+	/*
 	knownWords.add("data");
 	//need bigger numbers
 	//edit number time and name to actually be those things, not just words
 	synonyms.add(new ArrayList<String>(Arrays.asList("number", "time", "name", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "zero")));
 	funcs4Words.add("log");
-
+	*/
 	knownWords.add("a");
 	synonyms.add(new ArrayList<String>(Arrays.asList("an", "the")));
 	funcs4Words.add("article");
