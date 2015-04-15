@@ -27,6 +27,12 @@ public class AI implements Runnable {
     public static void greeting() {
         Random r = new Random();
         int responseToUse = r.nextInt(5 - 1) + 1;
+	int response2 = r.nextInt(12-1) + 2;
+	if (response2 > 5) {
+		response2 = response2/2;
+		responseToUse += response2;
+		responseToUse = responseToUse/2;		
+	}
         switch (responseToUse) {
             case 1:
                 output = "Hi" + output;
@@ -91,17 +97,14 @@ public class AI implements Runnable {
     	stringArr =  removeNull(stringArr);
         int j = 0;
         for (int i = 0; i < stringArr.length; i++) {
-            System.out.println("In loop");
             j += stringArr[i].length();
-            System.out.println("Got length");
         }
         return j;
     }
 
     public static void parse(String line) {
-        //usandfriends
         //scan sentence for words and replace with simpler words
-        //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil ifs checks
+        //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil if checks
         oldLine = line;
         line = line.toLowerCase();
         if (line.contains("hello")) {
@@ -131,19 +134,13 @@ public class AI implements Runnable {
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 allParts.add(fromBeginningPart[i]);
             }
-            System.out.println("Broken up... getting chars");
             chars = 0;
             chars += getCharsInStringArr(fromBeginningPart);
-            System.out.println("Got quantity: " + chars);
-            //Fix
-            numToRemove = chars + line.split(" ").length - 1;
+            numToRemove = chars + (removeNull(line.split(" ")).length) - 1;
             line = line.substring(numToRemove, line.length());
-            //
             for (int i = 0; i < fromBeginningPart.length; i++) {
                 fromBeginningPart[i] = "";
             }
-            System.out.println("Deleted beginning of String");
-            System.out.println('"' + line + '"');
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
                     if (knownWords.get(z).equals(allParts.get(i))) {
