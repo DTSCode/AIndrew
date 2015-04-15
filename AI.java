@@ -60,15 +60,7 @@ public class AI implements Runnable {
         funcs4Words.add("greeting");
 	knownWords.add("is");
 	funcs4Words.add("am");
-	knownWords.add("Who");
-	funcs4Words.add("past_data");
-	knownWords.add("What");
-	funcs4Words.add("past_data");
-	knownWords.add("When");
-	funcs4Words.add("past_data");
-	knownWords.add("Where");
-	funcs4Words.add("past_data");
-	knownWords.add("Why");
+	knownWords.add("W...");
 	funcs4Words.add("past_data");
 	knownWords.add("Can");
 	funcs4Words.add("able");
@@ -82,7 +74,14 @@ public class AI implements Runnable {
 	funcs4Words.add("action");
 	knownWords.add("data");
 	funcs4Words.add("log");
-	
+	knownWords.add("a");
+	funcs4Words.add("article");
+	knownWords.add("some");
+	funcs4Words.add("few");
+	knownWords.add("it");
+	funcs4Words("singPronoun");
+	kownWords.add("them");
+	funcs4Words.add("multPronoun");
     }
 
 	public static String[] removeNull(String[] a) {
@@ -105,6 +104,8 @@ public class AI implements Runnable {
 	/* n0vacane:4/14/2015
 	 * - probably best just to nuke this whole function and
 	 * rewrite it (parse) */
+	 // toad1359 to n0va It might be better, yet I finally found the correct method as to ensure sentence structure
+	 //all thats left is to work on the synonym system by a List of Lists.... every sub lists name is the root word and the list is of synonyms
 
     public static void parse(String line) {
         //scan sentence for words and replace with simpler words
