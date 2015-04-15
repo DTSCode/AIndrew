@@ -102,6 +102,10 @@ public class AI implements Runnable {
         return j;
     }
 
+	/* n0vacane:4/14/2015
+	 * - probably best just to nuke this whole function and
+	 * rewrite it (parse) */
+
     public static void parse(String line) {
         //scan sentence for words and replace with simpler words
         //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil if checks
