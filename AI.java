@@ -35,19 +35,19 @@ public class AI implements Runnable {
 	}
         switch (responseToUse) {
             case 1:
-                output = "Hi" + output;
+                output = "Hi, " + output;
                 break;
             case 2:
-                output = "Hello" + output;
+                output = "Hello, " + output;
                 break;
             case 3:
-                output = "Salutations" + output;
+                output = "Salutations, " + output;
                 break;
             case 4:
-                output = "Greetings" + output;
+                output = "Greetings, " + output;
                 break;
             case 5:
-                output = "Hola" + output;
+                output = "Hola, " + output;
                 break;
         }
     }
