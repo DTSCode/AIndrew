@@ -12,7 +12,6 @@ public class AI implements Runnable {
 
 	public static List<ArrayList<String>> synonyms = new ArrayList<>();
 	public static String oldLine;
-	public static int numToRemove = 0;
     public static List<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
@@ -129,23 +128,6 @@ public class AI implements Runnable {
 	*/
     }
 
-	public static String[] removeNull(String[] a) {
-		ArrayList<String> notNull = new ArrayList<String>();
-   		for (String str : a)
-      		if (str != null)
-         		notNull.add(str);
-   		return notNull.toArray(new String[notNull.size()]);
-	}
-
-    public static int getCharsInStringArr(String[] stringArr) {
-    	stringArr =  removeNull(stringArr);
-        int j = 0;
-        for (int i = 0; i < stringArr.length; i++) {
-            j += stringArr[i].length();
-        }
-        return j;
-    }
-
 	/* n0vacane:4/14/2015
 	 * - probably best just to nuke this whole function and
 	 * rewrite it (parse) */
@@ -182,15 +164,8 @@ public class AI implements Runnable {
         //correct method
         //keep going till line is empty
         	//count spaces
-            int count = line.length() - line.replace(" ", "").length();
             //load from beginning into list
             allParts = line.split(" ").asList();
-            chars = 0;
-            //get Char count
-            chars += getCharsInStringArr(allParts.toArray(new String[allParts.size()]));
-            numToRemove = chars + (removeNull(line.split(" ")).length) - 1;
-            line = line.substring(numToRemove, line.length());
-        while (!line.equals("")) {
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
                     if (knownWords.get(z).equals(allParts.get(i))) {
@@ -202,9 +177,7 @@ public class AI implements Runnable {
                         }
                     }
                 }
-            }
         }
-        chars = 0;
         oldLine = "";
         allParts.clear();
         while(allParts.remove(null));
@@ -241,9 +214,7 @@ public class AI implements Runnable {
                 }
             }
             if (numToRespond >= 0) {
-                for (int i = -1; i < numToRespond; numToRespond--) {
-                    parse(toRespond.get(numToRespond));
-                }
+                    parse(toRespond.get(0));
             }
         }
     }
