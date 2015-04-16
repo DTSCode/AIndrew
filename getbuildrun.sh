@@ -1,20 +1,31 @@
 #!/bin/bash
 #for use on ubuntu, mint, debian
-if [$(python -mplatform | grep Ubuntu) -eq "0" -o $(python -mplatform | grep Debian) -eq "0" -o $(python -mplatform | grep Mint) -eq "0"];
-then
-	if [$(dpkg-query -W -f='${Status}' git 2>/dev/null) -eq 0];
-	then
+
+python -mplatform | grep "Debian|Ubuntu|Mint"
+status1=$?
+
+if [ $status1 -eq 0 ] then
+	dpkg-query -W -f='${Status}' git 2>&1 >> /dev/null
+	status2=$?
+
+	if [$status2 -eq 0] then
 		echo "Installing git"
 		sudo apt-get install git
 	fi
-	if [$(dpkg-query -W -f='${Status}' *java* 2>/dev/null) -eq 0 -o $(javac -version 2>&1 | sed 's/java version "\(.*\)\.\(.*\)\..*"/\1\2/; 1q') -lt 18];
-	then 
+	
+	dpkg-query -W -f='${Status}' *java* 2>&1 >> /dev/null
+	status2=$?
+	javac -version 2>&1 | sed 's/java version "\(.*\)\.\(.*\)\..*"/\1\2/; 1q'
+	javastatus=$?
+	
+	if [$status2 -eq 0 -o $javastatus -lt 18] then
 		echo "Java"
 		sudo add-apt-repository ppa:webupd8-team/java
 		sudo apt-get update
 		sudo apt-get install oracle-java8-installer oracle-java8-set-default
 	fi
 fi
+
 if [$(basename "$PWD") -ne AIndrew];
 then
 	echo "Making build directory"
