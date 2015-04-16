@@ -57,7 +57,7 @@ public class AI implements Runnable {
     public static void generateWords() {
         //still need past and future tense
         knownWords.add("Hi");
-	synonyms.add(new ArrayList<String>(Arrays.asList("Hello", "hi", "Salutations", "Greetings", "Hola", "Yo")));
+	synonyms.add(new ArrayList<String>(Arrays.asList("Hello", "hi", "Salutations", "Greetings", "Hola", "Yo", "yo", "hola", "greetings", "salutations", "hello")));
         funcs4Words.add("greeting");
 
 	knownWords.add("is");
@@ -114,7 +114,7 @@ public class AI implements Runnable {
 	synonyms.add(new ArrayList<String>(Arrays.asList("they", "boys", "girls")));
 	funcs4Words.add("multiplePronoun");
 	//fix... throws Index out of bound
-	//removes repeats and allows lower case words
+	//removes repeats and all allows lower case words
 	/*
 	for (int i = synonyms.size(); i > 1; i--) {
 		for (int z = synonyms.get(i).size(); z > 1; z--) { 
@@ -151,7 +151,7 @@ public class AI implements Runnable {
 	 * - probably best just to nuke this whole function and
 	 * rewrite it (parse) */
 	 // toad1359 to n0va It might be better, yet I finally found the correct method as to ensure sentence structure
-	 //all thats left is to work on the synonym system by a List of Lists.... every sub lists name is the root word and the list is of synonyms
+	 //all thats left is to work on the synonym system by a List of Lists
 
     public static void parse(String line) {
         //scan sentence for words and replace with simpler words
@@ -207,7 +207,8 @@ public class AI implements Runnable {
                 }
             }
         }
-        //
+        chars = 0;
+        oldline = "";
         allParts.clear();
         while(allParts.remove(null));
         System.out.println(output);
