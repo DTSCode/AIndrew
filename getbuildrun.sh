@@ -1,7 +1,7 @@
 #!/bin/bash
 #for use on ubuntu, mint, debian
 #anything besides an apt-get system will require a manual python install
-if [!($python -V | grep "Python 2.7")]
+if [!(python -V | grep "Python 2.7")];
 then
 	echo "Installing Python 2.7"
 	sudo apt-get install python2.7
