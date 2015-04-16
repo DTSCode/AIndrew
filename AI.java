@@ -136,7 +136,7 @@ public class AI implements Runnable {
         line = line.toLowerCase();
         
         /* End program if requested by user */
-        if(line.equals("exit")
+        if(line.equals("exit"))
 			System.exit(0);
 		
 	//THIS needs to be replaced with loops
