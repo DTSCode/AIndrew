@@ -191,6 +191,7 @@ public class AI implements Runnable {
             }
             if (numToRespond >= 0) {
                     parse(toRespond.get(0));
+                    numToRespond--;
             }
         }
     }
