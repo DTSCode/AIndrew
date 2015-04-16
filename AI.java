@@ -157,8 +157,7 @@ public class AI implements Runnable {
         }
         //clear vars and output
         oldLine = "";
-        allParts.clear();
-        while(allParts.remove(null));
+        for(int i = 0; i < allParts.size(); i++) { allParts.remove(i); }
         System.out.println(output);
         output = "";
         toRespond.remove(numToRespond);
