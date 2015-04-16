@@ -208,7 +208,7 @@ public class AI implements Runnable {
             }
         }
         chars = 0;
-        oldline = "";
+        oldLine = "";
         allParts.clear();
         while(allParts.remove(null));
         System.out.println(output);
