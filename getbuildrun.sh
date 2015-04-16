@@ -3,7 +3,7 @@
 #anything besides an apt-get system will require a manual python install
 if [$(python -V | grep "Python 2.7") -ne "-1"];
 then
-	echo "Installing Python 2.7\n"
+	echo "Installing Python 2.7"
 	sudo apt-get install python2.7
 fi
 #commands for other distros coming soon!
@@ -11,12 +11,12 @@ if [$(python -mplatform | grep Ubuntu) -o $(python -mplatform | grep Debian) -o 
 then
 	if [$(dpkg-query -W -f='${Status}' git 2>/dev/null) -eq 0];
 	then
-		echo "Installing git\n"
+		echo "Installing git"
 		sudo apt-get install git
 	fi
 	if [$(dpkg-query -W -f='${Status}' *java* 2>/dev/null) -eq 0 -o $(javac -version 2>&1 | sed 's/java version "\(.*\)\.\(.*\)\..*"/\1\2/; 1q') -lt 18];
 	then 
-		echo "Java\n"
+		echo "Java"
 		sudo add-apt-repository ppa:webupd8-team/java
 		sudo apt-get update
 		sudo apt-get install oracle-java8-installer oracle-java8-set-default
@@ -24,12 +24,12 @@ then
 fi
 if [$(basename "$PWD") -ne AIndrew];
 then
-	echo "Making build directory\n"
+	echo "Making build directory"
 	mkdir AIndrew
 	cd AIndrew
 	git clone https://github.com/toad1359/AIndrew.git
 fi
-echo "Pulling latest\n"
+echo "Pulling latest"
 git pull
 if ["$?" -eq "-1"];
 then 
@@ -37,9 +37,9 @@ then
 	git clone https://github.com/toad1359/AIndrew.git
 	git pull
 fi
-echo "Compiling\n"
+echo "Compiling"
 javac *.java
 jar cmf META-INF/MANIFEST.MF AI.jar *.class
-echo "Jar created\n"
-echo "Running\n"
+echo "Jar created"
+echo "Running"
 java -jar AI.jar 
