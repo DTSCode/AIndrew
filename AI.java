@@ -13,7 +13,6 @@ public class AI implements Runnable {
 	public static List<ArrayList<String>> synonyms = new ArrayList<>();
 	public static String oldLine;
 	public static int numToRemove = 0;
-	public static String fromBeginningPart[] = new String[10];
     public static List<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
@@ -156,16 +155,17 @@ public class AI implements Runnable {
     public static void parse(String line) {
         //scan sentence for words and replace with simpler words
         //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil if checks
+        //oldLine is so instead of seeing data, the program will see data and then go back and see what the data is
         oldLine = line;
         line = line.toLowerCase();
-
+	//this needs to be replaced with loops
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
         }
         if (line.contains("hi")) {
         	line = line.replaceAll("hi", "Hi");
         }
-        //...
+        //
         //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
 /*
         for (int i = 0; i + 1 <= knownWords.size(); i++) {
@@ -180,19 +180,17 @@ public class AI implements Runnable {
         }
 */
         //correct method
-        while (!line.equals("")) {
+        //keep going till line is empty
+        	//count spaces
             int count = line.length() - line.replace(" ", "").length();
-            fromBeginningPart = line.split(" ", count);
-            for (int i = 0; i < fromBeginningPart.length; i++) {
-                allParts.add(fromBeginningPart[i]);
-            }
+            //load from beginning into list
+            allParts = line.split(" ").asList();
             chars = 0;
-            chars += getCharsInStringArr(fromBeginningPart);
+            //get Char count
+            chars += getCharsInStringArr(allParts.toArray(new String[allParts.size()]));
             numToRemove = chars + (removeNull(line.split(" ")).length) - 1;
             line = line.substring(numToRemove, line.length());
-            for (int i = 0; i < fromBeginningPart.length; i++) {
-                fromBeginningPart[i] = "";
-            }
+        while (!line.equals("")) {
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
                     if (knownWords.get(z).equals(allParts.get(i))) {
@@ -200,8 +198,7 @@ public class AI implements Runnable {
                             case "greeting":
                                 greeting();
                                 break;
-                            case "farewell":
-                                break;
+                                //rest of functions
                         }
                     }
                 }
