@@ -7,7 +7,7 @@ then
 	sudo apt-get install python2.7
 fi
 #commands for other distros coming soon!
-if [$(python -mplatform | grep Ubuntu) -o $(python -mplatform | grep Debian) -o $(python -mplatform | grep Mint)];
+if [$(python -mplatform | grep Ubuntu) -eq "0" -o $(python -mplatform | grep Debian) -eq "0" -o $(python -mplatform | grep Mint) -eq "0"];
 then
 	if [$(dpkg-query -W -f='${Status}' git 2>/dev/null) -eq 0];
 	then
