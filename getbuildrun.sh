@@ -1,12 +1,5 @@
 #!/bin/bash
 #for use on ubuntu, mint, debian
-#anything besides an apt-get system will require a manual python install
-if [$(python -V | grep "Python 2.7") -ne "-1"];
-then
-	echo "Installing Python 2.7"
-	sudo apt-get install python2.7
-fi
-#commands for other distros coming soon!
 if [$(python -mplatform | grep Ubuntu) -eq "0" -o $(python -mplatform | grep Debian) -eq "0" -o $(python -mplatform | grep Mint) -eq "0"];
 then
 	if [$(dpkg-query -W -f='${Status}' git 2>/dev/null) -eq 0];
