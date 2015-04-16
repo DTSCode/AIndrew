@@ -213,6 +213,7 @@ public class AI implements Runnable {
         while(allParts.remove(null));
         System.out.println(output);
         output = "";
+        toRespond.remove(numToRespond);
     }
 
     public static void input() {
