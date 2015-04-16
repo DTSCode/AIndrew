@@ -12,7 +12,7 @@ public class AI implements Runnable {
 
 	public static List<ArrayList<String>> synonyms = new ArrayList<>();
 	public static String oldLine;
-    public static ArrayList<String> allParts = new ArrayList<>();
+    public static List<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
     public static int threadcount = 0;
@@ -157,7 +157,7 @@ public class AI implements Runnable {
         }
         //clear vars and output
         oldLine = "";
-        for(int i = 0; i < allParts.size(); i++) { allParts.remove(i); }
+        allParts.removeAll();
         System.out.println(output);
         output = "";
         toRespond.remove(numToRespond);
