@@ -127,43 +127,20 @@ public class AI implements Runnable {
 	}
 	*/
     }
-
-	/* n0vacane:4/14/2015
-	 * - probably best just to nuke this whole function and
-	 * rewrite it (parse) */
-	 // toad1359 to n0va It might be better, yet I finally found the correct method as to ensure sentence structure
-	 //all thats left is to work on the synonym system by a List of Lists
-
+    
     public static void parse(String line) {
         //scan sentence for words and replace with simpler words
-        //update synonym system with loops and a List of synonyms to be replaced with simpler words and then parsed below instead of 1mil if checks
+        //update synonym system with loops
         //oldLine is so instead of seeing data, the program will see data and then go back and see what the data is
         oldLine = line;
         line = line.toLowerCase();
-	//this needs to be replaced with loops
+	//THIS needs to be replaced with loops
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
         }
         if (line.contains("hi")) {
         	line = line.replaceAll("hi", "Hi");
         }
-        //
-        //below method won't guarantee proper sentence structure, break along the spaces and do per word, not per first items in list
-/*
-        for (int i = 0; i + 1 <= knownWords.size(); i++) {
-            if (line.contains(knownWords.get(i))) {
-                if (funcs4Words.get(i) == "greeting") {
-                    greeting();
-                }
-                if (funcs4Words.get(i) == "other") {
-                    //other();
-                }
-            }
-        }
-*/
-        //correct method
-        //keep going till line is empty
-        	//count spaces
             //load from beginning into list
             allParts = line.split(" ").asList();
             for (int i = 0; i < allParts.size(); i++) {
@@ -178,6 +155,7 @@ public class AI implements Runnable {
                     }
                 }
         }
+        //clear vars and output
         oldLine = "";
         allParts.clear();
         while(allParts.remove(null));
@@ -204,7 +182,6 @@ public class AI implements Runnable {
     }
 
     public static void respond() {
-        //usandfriends:
         while (true) {
             while (numToRespond == -1) {
                 try {
