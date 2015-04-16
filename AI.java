@@ -135,9 +135,11 @@ public class AI implements Runnable {
         oldLine = line;
         line = line.toLowerCase();
         
+        //n0vacane... good idea but should be implemented with less strict syntax AND exit is exit what? What if someone told you to exit? #shutdown I'll leave it for now as it should be useful
         /* End program if requested by user */
         if(line.equals("exit"))
 			System.exit(0);
+	
 		
 	//THIS needs to be replaced with loops
         if (line.contains("hello")) {
