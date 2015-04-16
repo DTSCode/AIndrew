@@ -1,3 +1,4 @@
 #!/bin/bash
 javac *.java
-java AI
+jar cmf META-INF/MANIFEST.MF AI.jar *.class
+java -jar AI.jar 
