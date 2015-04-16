@@ -12,7 +12,7 @@ public class AI implements Runnable {
 
 	public static List<ArrayList<String>> synonyms = new ArrayList<>();
 	public static String oldLine;
-    public static List<String> allParts = new ArrayList<String>();
+    public static ArrayList<String> allParts = new ArrayList<String>();
     public static int chars;
     public static BufferedImage image1;
     public static int threadcount = 0;
