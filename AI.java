@@ -142,7 +142,7 @@ public class AI implements Runnable {
         	line = line.replaceAll("hi", "Hi");
         }
             //load from beginning into list
-            allParts = line.split(" ").asList();
+            allParts = Arrays.asList(line.split(" "));
             for (int i = 0; i < allParts.size(); i++) {
                 for (int z = 0; z < knownWords.size(); z++) {
                     if (knownWords.get(z).equals(allParts.get(i))) {
