@@ -134,6 +134,11 @@ public class AI implements Runnable {
         //oldLine is so instead of seeing data, the program will see data and then go back and see what the data is
         oldLine = line;
         line = line.toLowerCase();
+        
+        /* End program if requested by user */
+        if(line.equals("exit")
+			System.exit(0);
+		
 	//THIS needs to be replaced with loops
         if (line.contains("hello")) {
             line = line.replaceAll("hello", "Hi");
@@ -165,7 +170,7 @@ public class AI implements Runnable {
 
     public static void input() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Ready for Input.");
+        System.out.println("Ready for Input.\t\t(type 'exit' to quit)");
         while (input.length() == 0) {
             try {
                 input = br.readLine();
