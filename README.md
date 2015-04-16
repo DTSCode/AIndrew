@@ -5,5 +5,4 @@ This AI is able to understand english through the synonym system. The synonym sy
 
 Creators:
 toad1359 (designer, concept, coder)
-usandfriends (helper, coder)
-n0vacane (UI coder)
+n0vacane (helper, coder, tester)
